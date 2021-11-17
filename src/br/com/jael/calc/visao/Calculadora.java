@@ -23,7 +23,7 @@ public class Calculadora extends JFrame {
         Teclado teclado = new Teclado();
         add(display, BorderLayout.NORTH);
         add(teclado, BorderLayout.CENTER);
-        display.setPreferredSize(new Dimension(325, 80));
+        display.setPreferredSize(new Dimension(325, 80)
     }
 
     public static void main(String[] args) {
