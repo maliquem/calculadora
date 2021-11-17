@@ -6,6 +6,8 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import br.com.jael.calc.modelo.Memoria;
+
 public class Teclado extends JPanel implements ActionListener {
 
     private final Color COR_CINZA_ESCURO = new Color(68, 68, 68);
@@ -25,7 +27,7 @@ public class Teclado extends JPanel implements ActionListener {
 
         // LINHA 1
         adicionarBotao("AC", COR_CINZA_ESCURO, c, 0, 0);
-        adicionarBotao("+/-", COR_CINZA_ESCURO, c, 1, 0);
+        adicionarBotao("±", COR_CINZA_ESCURO, c, 1, 0);
         adicionarBotao("%", COR_CINZA_ESCURO, c, 2, 0);
         adicionarBotao("/", COR_LARANJA, c, 3, 0);
 
@@ -68,7 +70,7 @@ public class Teclado extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
             JButton botao = (JButton) e.getSource();
-            System.out.println(botao.getText());
+            Memoria.getInstancia().processarComando(botao.getText());
         }
     }
 
